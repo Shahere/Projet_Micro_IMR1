@@ -1,0 +1,15 @@
+.\output\affichagelcd.o: ..\User\affichagelcd.c
+.\output\affichagelcd.o: ..\User\touch/ili_lcd_general.h
+.\output\affichagelcd.o: ..\Libraries\LCP1768_StdPeriph_Driver\include\lpc17xx_gpio.h
+.\output\affichagelcd.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\LPC17xx.h
+.\output\affichagelcd.o: ..\Libraries\CM3\CoreSupport\core_cm3.h
+.\output\affichagelcd.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\affichagelcd.o: ..\Libraries\CM3\CoreSupport\core_cmInstr.h
+.\output\affichagelcd.o: ..\Libraries\CM3\CoreSupport\core_cmFunc.h
+.\output\affichagelcd.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\system_LPC17xx.h
+.\output\affichagelcd.o: ..\Libraries\LCP1768_StdPeriph_Driver\include\lpc_types.h
+.\output\affichagelcd.o: ..\User\touch/lcd_api.h
+.\output\affichagelcd.o: ..\User\touch/touch_panel.h
+.\output\affichagelcd.o: ..\Libraries\LCP1768_StdPeriph_Driver\include\lpc17xx_libcfg_default.h
+.\output\affichagelcd.o: ..\Libraries\LCP1768_StdPeriph_Driver\include\lpc17xx_pinsel.h
+.\output\affichagelcd.o: ..\User\touch/ili_lcd_general.h

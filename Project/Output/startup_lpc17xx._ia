@@ -1,0 +1,6 @@
+--cpu Cortex-M3 --pd "__EVAL SETA 1" -g --apcs=interwork 
+-I.\RTE\_Open1786
+-IC:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+-IC:\Keil_v5\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include
+--pd "__UVISION_VERSION SETA 535" --pd "_RTE_ SETA 1" --pd "LPC175x_6x SETA 1" --pd "_RTE_ SETA 1" --pd "__BUILD_WITH_EXAMPLE__ SETA 1" --pd "__RAM_MODE__ SETA 0"
+--list .\listing\startup_lpc17xx.lst --xref -o .\output\startup_lpc17xx.o --depend .\output\startup_lpc17xx.d "..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\startup\arm\startup_LPC17xx.s"

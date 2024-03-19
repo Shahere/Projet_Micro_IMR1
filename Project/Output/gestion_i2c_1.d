@@ -1,0 +1,9 @@
+.\output\gestion_i2c_1.o: gestion_I2C.c
+.\output\gestion_i2c_1.o: ..\Libraries\LCP1768_StdPeriph_Driver\include\lpc17xx_i2c.h
+.\output\gestion_i2c_1.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\LPC17xx.h
+.\output\gestion_i2c_1.o: ..\Libraries\CM3\CoreSupport\core_cm3.h
+.\output\gestion_i2c_1.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\output\gestion_i2c_1.o: ..\Libraries\CM3\CoreSupport\core_cmInstr.h
+.\output\gestion_i2c_1.o: ..\Libraries\CM3\CoreSupport\core_cmFunc.h
+.\output\gestion_i2c_1.o: ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx\system_LPC17xx.h
+.\output\gestion_i2c_1.o: ..\Libraries\LCP1768_StdPeriph_Driver\include\lpc_types.h

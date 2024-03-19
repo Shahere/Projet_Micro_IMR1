@@ -1,0 +1,6 @@
+-c --cpu Cortex-M3 -D__EVAL -g -O0 --apcs=interwork --enum_is_int -I ..\Libraries\LCP1768_StdPeriph_Driver\include -I ..\Libraries\CM3\CoreSupport -I ..\Libraries\CM3\DeviceSupport\NXP\LPC17xx -I ..\User
+-I.\RTE\_Open1786
+-IC:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+-IC:\Keil_v5\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include
+-D__UVISION_VERSION="535" -D_RTE_ -DLPC175x_6x -D_RTE_
+-o .\output\gestion_i2c_1.o --omf_browse .\output\gestion_i2c_1.crf --depend .\output\gestion_i2c_1.d "gestion_I2C.c"

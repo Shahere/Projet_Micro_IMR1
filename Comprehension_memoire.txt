@@ -1,0 +1,116 @@
+- La mémoire contient 2048 mots de 8 bits chacun.
+- Il faut un bit d'adresse de 11 bits pour adresser un mot.
+
+- Signaux du bus I2C : 
+	- Start condition
+	- Slave address
+	- Word address
+	- Data bytes
+	- Stop condition
+- Comment se fait un échange sur ce bus ?
+	- 1 condition de démarrage obligatoire // SDA haut et SCL bas
+	- Le premier bite apres la condition de sortia est l'adresse de l'escalve
+		- Elle contient : le type de materiel / la page memoire à acceder / et specifie la lecture ou ecriture
+	- Le transert de données se fait quand le SCL est haut
+	- La condition d'arrêt obligatoire met fin // SDA bas et SCL haut
+- Il y a 2 signaux, SDA et SCL
+- Le maître de notre bus sera la processeur LPC1768
+- L'adresse escalve I2C à utiliser est 1010b
+
+- Description des trames
+	- Lecture d'un mot en mémoire // Current adresse read
+		- LSB à 1
+		- 1er octet = adresse de l'esclave // 1010
+		- 2e octet = Data de lecture
+
+	- Lecture d'un mot en mémoire // Selective adresse read
+		- LSB à 0
+		- 1er octet = adresse de l'esclave // 1010
+		- 2e octet = Data lecture
+		- 3e octet = Data lecture
+
+
+
+
+- Verifier si le timer fonctionne : View -> System viewer -> Timer -> Timer0
+	- Le TC doit s'incrémenter une fois que le PC atteint : 0xFF
+- En mode simulation : 
+	- 
+
+- I2C0 bien alimenter ? - En mode debug -> Peripherals -> Clocking and power control -> power control
+	- Pour l'alimenter : il faut dans le registre ISER0 enable : ISE_I2C0
+
+- Le bus va fonctionner à la vitesse de 100k Hz (doc page 428) 
+	- gestion de la vitesse de la memoire : 
+	static void I2C_SetClock (LPC_I2C_TypeDef *I2Cx, uint32_t target_clock)
+
+- La fonction qui permet d'autoriser les echanges i2C : 
+	void I2C_Cmd(LPC_I2C_TypeDef* I2Cx, FunctionalState NewState)
+
+- Initialiser les transferts i2C : init -> setclock -> xmd
+
+
+=====================================================================================
+
+
+- Ecriture : fonction : 
+	- static uint32_t I2C_SendByte (LPC_I2C_TypeDef *I2Cx, uint8_t databyte)
+	- Paramètre : 
+		- Le peripherique selectionné
+		- Nombre de bytes à écrire et contenu
+
+- Ecriture en mode maitre : fonction : 
+	- Status I2C_MasterTransferData(LPC_I2C_TypeDef *I2Cx, I2C_M_SETUP_Type *TransferCfg, I2C_TRANSFER_OPT_Type Opt)
+	- Paramètre : 
+		- Le peripherique selectionné
+		- Une structure de type I2C_M_SETUP_Type
+		- I2C_TRANSFER_OPT_Type
+
+- Valeurs à mettre : 
+	- LPC_I2C0 pour le periph
+	- Une structure de type I2C_M_SETUP_Type
+	- I2C_TRANSFER_POLLING pour indique si on est en polling mode
+
+	- La structure I2C_M_SETUP_Type nous indiques "Définitions de structure de données de configuration de transfert d'esclave"
+
+- Verification : 
+	- Apres les instructions sur la mémoire i2C et load le fichier d'initialisation
+	+ (baguette magique -> debug -> fichier init)
+	- dans les commandes (bas gauche) : 
+		- 1 - Simulation memoire 22C active
+		- 2 - Ecriture memoire a partir de l'adresse : 359
+		- 3 - Ecriture memoire adr: 360; data 6
+
+- MAnipulation sur la carte
+	- branchement I2C : 	SCL - p28
+				SDA - p27
+				GND - carré dessus le 31
+	- Inspection de la memoire i2C : 
+		- Logiciel WaveForms
+		- changer le mode de debug
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

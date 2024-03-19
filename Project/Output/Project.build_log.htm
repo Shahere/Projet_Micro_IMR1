@@ -1,0 +1,143 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.35.0.0
+Copyright (C) 2021 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: Jean-Philippe LESAULT, ENSSAT, LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.35.0.2
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 7 (build 960)
+Assembler:       Armasm.exe V5.06 update 7 (build 960)
+Linker/Locator:  ArmLink.exe V5.06 update 7 (build 960)
+Library Manager: ArmAr.exe V5.06 update 7 (build 960)
+Hex Converter:   FromElf.exe V5.06 update 7 (build 960)
+CPU DLL:         SARMCM3.DLL V5.35.0.2
+Dialog DLL:      DARMP1.DLL V1.27.0.0
+Target DLL:      Segger\JL2CM3.dll V2.99.40.0
+Dialog DLL:      TARMP1.DLL V1.26.0.0
+ 
+<h2>Project:</h2>
+Z:\1A\archy\Projet_Micro IMR1\Project\Project.uvprojx
+Project File Date:  06/01/2023
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 7 (build 960)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+*** Note: Rebuilding project, since 'Options->Output->Create Batch File' is selected.
+Rebuild target 'Open1786'
+Note: source file '.\gestion_I2C.c' - object file renamed from '.\Output\gestion_I2C.o' to '.\Output\gestion_i2c_1.o'.
+assembling startup_LPC17xx.s...
+compiling system_LPC17xx.c...
+compiling core_cm3.c...
+compiling lpc17xx_clkpwr.c...
+compiling lpc17xx_gpio.c...
+compiling lpc17xx_pinsel.c...
+compiling lpc17xx_timer.c...
+..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_timer.c(115): warning:  #68-D: integer conversion resulted in a change of sign
+        uint32_t tnum = -1;
+..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_timer.c: 1 warning, 0 errors
+compiling lpc17xx_exti.c...
+compiling lpc17xx_nvic.c...
+compiling lpc17xx_ssp.c...
+compiling lpc17xx_i2c.c...
+..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_i2c.c(598): warning:  #188-D: enumerated type mixed with another type
+                                I2C_IntCmd(I2Cx, 0);
+..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_i2c.c(695): warning:  #188-D: enumerated type mixed with another type
+                I2C_IntCmd(I2Cx, 0);
+..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_i2c.c(702): warning:  #188-D: enumerated type mixed with another type
+                                I2C_IntCmd(I2Cx, 1);
+..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_i2c.c(750): warning:  #188-D: enumerated type mixed with another type
+                I2C_IntCmd(I2Cx, 0);
+..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_i2c.c(902): warning:  #188-D: enumerated type mixed with another type
+                                        CodeStatus = I2C_GetByte(I2Cx, &tmp, 1);
+..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_i2c.c(915): warning:  #188-D: enumerated type mixed with another type
+                                        CodeStatus = I2C_GetByte(I2Cx, &tmp, 0);
+..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_i2c.c(952): warning:  #188-D: enumerated type mixed with another type
+                I2C_IntCmd(I2Cx, 1);
+..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_i2c.c(1162): warning:  #188-D: enumerated type mixed with another type
+                I2C_IntCmd(I2Cx, 1);
+..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_i2c.c(1186): warning:  #186-D: pointless comparison of unsigned integer with zero
+        CHECK_PARAM(PARAM_I2C_SLAVEADDR_CH(OwnSlaveAddrConfigStruct->SlaveAddrChannel));
+..\Libraries\LCP1768_StdPeriph_Driver\source\lpc17xx_i2c.c: 9 warnings, 0 errors
+compiling main.c...
+..\User\affichagelcd.h(9): warning:  #1-D: last line of file ends without a newline
+   
+..\User\global.h(9): warning:  #260-D: explicit type is missing ("int" assumed)
+  extern isPress;
+..\User\global.h(10): warning:  #260-D: explicit type is missing ("int" assumed)
+  extern lcdPress;
+..\User\gestion_I2C.h(6): warning:  #1295-D: Deprecated declaration init_i2c_eeprom - give arg types
+  void init_i2c_eeprom();
+..\User\gestion_Timer.h(7): warning:  #1295-D: Deprecated declaration initTimer - give arg types
+  void initTimer();
+..\User\gestion_Timer.h(8): warning:  #1295-D: Deprecated declaration restartCount - give arg types
+  void restartCount();
+..\User\gestion_Timer.h(9): warning:  #1295-D: Deprecated declaration stopCount - give arg types
+  void stopCount();
+..\User\main.c(54): warning:  #177-D: variable "slaveAddr"  was declared but never referenced
+                uint16_t slaveAddr = 81;
+..\User\main.c(55): warning:  #177-D: variable "data"  was declared but never referenced
+                int data = 0x0070;
+..\User\main.c(56): warning:  #177-D: variable "data_recup"  was declared but never referenced
+                int data_recup = 0x70;
+..\User\main.c: 10 warnings, 0 errors
+compiling ili_lcd_general.c...
+compiling lcd_api.c...
+compiling english_16x8.c...
+compiling affichagelcd.c...
+compiling touch_panel.c...
+..\User\global.h(9): warning:  #260-D: explicit type is missing ("int" assumed)
+  extern isPress;
+..\User\global.h(10): warning:  #260-D: explicit type is missing ("int" assumed)
+  extern lcdPress;
+..\User\touch\touch_panel.c(17): warning:  #177-D: variable "touch_data_tx"  was declared but never referenced
+      uint8_t touch_data_tx[BUF_SIZE];
+..\User\touch\touch_panel.c: 3 warnings, 0 errors
+compiling gestion_I2C.c...
+gestion_I2C.c(51): warning:  #940-D: missing return statement at end of non-void function "i2c_eeprom_read" 
+  }
+gestion_I2C.c: 1 warning, 0 errors
+compiling gestion_Timer.c...
+..\User\gestion_Timer.h(7): warning:  #1295-D: Deprecated declaration initTimer - give arg types
+  void initTimer();
+..\User\gestion_Timer.h(8): warning:  #1295-D: Deprecated declaration restartCount - give arg types
+  void restartCount();
+..\User\gestion_Timer.h(9): warning:  #1295-D: Deprecated declaration stopCount - give arg types
+  void stopCount();
+..\User\affichagelcd.h(9): warning:  #1-D: last line of file ends without a newline
+   
+gestion_Timer.c: 4 warnings, 0 errors
+compiling gestion_Pinsel.c...
+linking...
+Program Size: Code=15876 RO-data=1792 RW-data=48 ZI-data=744  
+FromELF: creating hex file...
+".\Output\Project.axf" - 0 Error(s), 28 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.8.0.pack
+                ARM.CMSIS.5.8.0
+                CMSIS (Common Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.5.0
+
+Package Vendor: Keil
+                http://www.keil.com/pack/Keil.LPC1700_DFP.2.7.1.pack
+                Keil.LPC1700_DFP.2.7.1
+                NXP LPC1700 Series Device Support, Drivers and Examples for MCB1700 and LPC1788-32
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_Open1786
+  C:\Keil_v5\Packs\ARM\CMSIS\5.8.0\CMSIS\Core\Include
+  C:\Keil_v5\Packs\Keil\LPC1700_DFP\2.7.1\Device\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.5.0
+Build Time Elapsed:  00:00:07
+</pre>
+</body>
+</html>
